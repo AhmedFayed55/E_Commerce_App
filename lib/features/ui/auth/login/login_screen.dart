@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/cache/shared_prefrence.dart';
 import '../../../../core/utils/dialogue_utils.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -45,6 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
               title: "Success",
               posActionName: "OK",
               posAction: () {
+                // todo: save token
+                SharedPreferenceUtils.saveData(
+                    key: "token", val: state.responseEntity.token);
                 Navigator.of(context).pushReplacementNamed(AppRoutes.homeRoute);
               });
         }
@@ -61,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
               key: viewModel.formKey,
               child: Column(
                 children: [
-                  Image.asset(AppAssets.routeImage),
+                  Image.asset(AppAssets.routeImageBlue),
                   SizedBox(
                     height: 75.h,
                   ),

@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommerce_app/core/utils/app_assets.dart';
 import 'package:ecommerce_app/core/utils/app_colors.dart';
 import 'package:ecommerce_app/core/utils/app_styles.dart';
 import 'package:ecommerce_app/domain/entities/ProductResponseEntity.dart';
+import 'package:ecommerce_app/features/ui/pages/home_screen/tabs/products_tab/cubit/product_tab_view_model.dart';
 import 'package:ecommerce_app/features/ui/pages/home_screen/tabs/products_tab/custom_txt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -102,6 +102,8 @@ class ProductTabItem extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         //todo: Add to cart
+                        ProductTabViewModel.get(context)
+                            .addToCart(product.id ?? '');
                       },
                       child: Icon(
                         Icons.add_circle,
