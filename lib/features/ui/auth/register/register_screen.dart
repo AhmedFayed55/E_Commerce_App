@@ -49,8 +49,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(AppAssets.routeImage),
-              SizedBox(height: 40.h,),
+                Image.asset(AppAssets.routeImageBlue),
+                SizedBox(height: 40.h,),
               Column(
                 spacing: 15.h,
                 crossAxisAlignment: CrossAxisAlignment.start,

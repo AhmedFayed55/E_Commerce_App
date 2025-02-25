@@ -47,6 +47,7 @@ dependencies:
   cached_network_image: ^3.4.1
   auto_size_text: ^3.0.0
   readmore: ^3.0.0
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_test:

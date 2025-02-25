@@ -41,10 +41,9 @@ class HomeTab extends StatelessWidget {
                 return Center(
                   child: Text(state.failures.errorMessage),
                 );
-              } else if (state is CategorySuccessState) {
-                return Text(
-                    state.categoryResponseEntity.data!.length.toString());
-                // return buildCategoryBrandSec(list: viewModel.categoryList);
+              } else if (viewModel.categoryList.isNotEmpty) {
+                return buildCategoryBrandSec(list: viewModel.categoryList);
+                // state.categoryResponseEntity.data!.length.toString()
               }
               return Container();
             },
@@ -63,10 +62,9 @@ class HomeTab extends StatelessWidget {
                 return Center(
                   child: Text(state.failures.errorMessage),
                 );
-              } else if (state is BrandSuccessState) {
-                return Text(
-                    state.categoryResponseEntity.data!.length.toString());
-                // buildCategoryBrandSec(list: viewModel.brandsList)
+              } else if (viewModel.brandsList.isNotEmpty) {
+                return buildCategoryBrandSec(list: viewModel.brandsList);
+                // state.categoryResponseEntity.data!.length.toString()
               }
               return Container();
             },

@@ -5,4 +5,5 @@ class AppRoutes{
   static String cartRoute = "cart";
   static String productRoute = "product";
   static String productDetailsRoute = "productDetails";
+  static String cartScreenRoute = "cartScreen";
 }

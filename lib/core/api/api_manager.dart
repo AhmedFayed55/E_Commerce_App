@@ -22,10 +22,33 @@ class ApiManager{
     return dio.post(ApiConstants.baseUrl+endPoint,
         queryParameters: queryParameters,
         data: body,
-        options: Options(
-            headers: headers,
-          validateStatus: (status) => true
-        )
+        options: Options(headers: headers, validateStatus: (status) => true));
+  }
+
+  Future<Response> deleteData({
+    required String endPoint,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    Map<String, dynamic>? headers,
+    Object? body,
+  }) {
+    return dio.delete(ApiConstants.baseUrl + endPoint,
+        queryParameters: queryParameters,
+        data: body,
+        options: Options(headers: headers, validateStatus: (status) => true));
+  }
+
+  Future<Response> updateData({
+    required String endPoint,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    Map<String, dynamic>? headers,
+    Object? body,
+  }) {
+    return dio.put(ApiConstants.baseUrl + endPoint,
+        queryParameters: queryParameters,
+        data: body,
+        options: Options(headers: headers, validateStatus: (status) => true)
     );
   }
 }
